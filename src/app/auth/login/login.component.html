@@ -1,0 +1,29 @@
+<section class="row pt-10 container mx-auto" >
+  <section class="col-md-6 mx-auto">
+    <section class="card rounded-0" id="login">
+      <section class="card-header">
+        <h1 class="mb-0">User Login</h1>
+      </section>
+      <section class="card-body">
+        <form action="" class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+          <section class="form-group mb-3">
+            <label for="username">Username</label>
+            <input type="text" class="form-control rounded-0" formControlName="username"
+              [class.is-invalid]="username.invalid && (username.dirty || username.touched)">
+            <small class="text-danger" *ngIf="username.invalid && (username.dirty || username.touched)">Username is
+              required</small>
+          </section>
+          <section class="form-group mb-3">
+            <label for="password">Password</label>
+            <input type="password" class="form-control rounded-0" formControlName="password"
+              [class.is-invalid]="password.invalid && (password.dirty || password.touched)">
+            <small class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">Password is
+              required</small>
+          </section>
+          <button class="btn btn-primary" style="width: 100%;" type="submit"
+            [disabled]="!loginForm.valid">Login</button>
+        </form>
+      </section>
+    </section>
+  </section>
+</section>
