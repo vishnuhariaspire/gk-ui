@@ -3,33 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from '../feature/auth/auth.module';
+import { HomeModule } from '../feature/home/home.module';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoadingInterceptor } from './core/loading.interceptor';
-import { HomeModule } from './home/home.module';
-import { AuthModule } from './auth/auth.module';
-import { ErrorInterceptor } from './core/error.interceptor';
-import { ToastService } from './core/toast.service';
-import { ToastsContainerComponent } from './core/toasts-container.component';
+import { NavComponent } from './shared/nav/nav.component';
+import { ToastsContainerComponent } from './shared/toasts/toasts-container.component';
 
 @NgModule({
-  declarations: [AppComponent, ToastsContainerComponent],
+  declarations: [AppComponent, NavComponent, ToastsContainerComponent],
   imports: [
+    AppRoutingModule,
     BrowserModule,
+    NgbModule,
     HomeModule,
     AuthModule,
-    AppRoutingModule,
+    CoreModule,
     HttpClientModule,
-    NgbModule,
-  ],
-  providers: [
-    ToastService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ErrorInterceptor,
-      multi: true,
-    },
-    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    SharedModule,
   ],
   bootstrap: [AppComponent],
 })

@@ -1,23 +1,5 @@
 <main>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand text-white" href="#">Green Koncepts</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse" id="navbarSupportedContent">
-        <div class="me-auto">
-        </div>
-        <button class="btn btn-outline" (click)="logout()" *ngIf="!!authService.key" style="color: aqua;">Logout</button>
-        <div class="d-flex text-white">{{dateTime | date : 'dd MMM yyyy HH:mm:ss'}}</div>
-      </div>
-    </div>
-  </nav>
-  <div class="d-flex justify-content-center mb-5">
-    <div class="spinner-border text-info" role="status" *ngIf="isLoading$ | async">
-    </div>
-  </div>
+  <app-nav></app-nav>
   <app-toasts></app-toasts>
   <router-outlet></router-outlet>
 </main>

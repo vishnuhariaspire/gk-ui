@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, CanDeactivate } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './auth/login/login.component';
-import { AuthGuard } from './auth/auth.guard';
-import { CanActivateGuard } from './auth/can-not-activate.guard';
+import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from 'src/feature/auth/login/login.component';
+import { HomeComponent } from 'src/feature/home/home.component';
+import { AuthGuard } from './core/guards/auth.guard';
+import { CanActivateGuard } from './core/guards/can-not-activate.guard';
 
 const routes: Routes = [
   {
