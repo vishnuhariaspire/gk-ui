@@ -20,6 +20,6 @@ import { LoadingService } from './services/loading.service';
     },
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
-  imports: [CommonModule, NgbModule],
+  imports: [CommonModule],
 })
 export class CoreModule {}
