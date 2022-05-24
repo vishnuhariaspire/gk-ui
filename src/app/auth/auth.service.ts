@@ -1,9 +1,11 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  apiUrl = environment.apiUrl;
   isLoggedIn() {
     return !!this.key;
   }
@@ -19,7 +21,7 @@ export class AuthService {
   login(username: string, password: string) {
     return this._http
       .get<any>(
-        `https://dev.greenkoncepts.com/gktest/login?username=${username}&password=${password}`
+        `${this.apiUrl}/login?username=${username}&password=${password}`
       )
       .subscribe((res) => {
         this.key = res.key;
