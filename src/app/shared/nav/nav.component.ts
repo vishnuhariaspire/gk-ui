@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingService } from 'src/app/core/services/loading.service';
-import { AuthService } from 'src/feature/auth/auth.service';
+import { AuthService } from 'src/app/feature/auth/auth.service';
 
 @Component({
   selector: 'app-nav',

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from 'src/feature/auth/login/login.component';
-import { HomeComponent } from 'src/feature/home/home.component';
+import { LoginComponent } from 'src/app/feature/auth/login/login.component';
+import { HomeComponent } from 'src/app/feature/home/home.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { CanActivateGuard } from './core/guards/can-not-activate.guard';
 

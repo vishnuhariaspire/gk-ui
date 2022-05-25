@@ -7,7 +7,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CanActivate } from '@angular/router';
-import { AuthService } from 'src/feature/auth/auth.service';
+import { AuthService } from 'src/app/feature/auth/auth.service';
 
 window.addEventListener('beforeunload', function (e) {
   localStorage.setItem(
