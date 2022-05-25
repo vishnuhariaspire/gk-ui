@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './guards/auth.guard';
-import { CanActivateGuard } from './guards/can-not-activate.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { LoadingService } from './services/loading.service';
+import { CanNotLoadGuard } from './guards/can-not-load.guard';
 
 @NgModule({
   providers: [
     AuthGuard,
-    CanActivateGuard,
+    CanNotLoadGuard,
     LoadingService,
     {
       provide: HTTP_INTERCEPTORS,
