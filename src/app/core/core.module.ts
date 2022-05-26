@@ -6,11 +6,13 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { LoadingService } from './services/loading.service';
 import { CanNotLoadGuard } from './guards/can-not-load.guard';
+import { CanNotDeactivateGuard } from './guards/can-not-deactivate.guard';
 
 @NgModule({
   providers: [
     AuthGuard,
     CanNotLoadGuard,
+    CanNotDeactivateGuard,
     LoadingService,
     {
       provide: HTTP_INTERCEPTORS,

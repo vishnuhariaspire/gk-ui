@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CanNotDeactivateGuard } from './core/guards/can-not-deactivate.guard';
 import { CanNotLoadGuard } from './core/guards/can-not-load.guard';
 
 const routes: Routes = [
@@ -7,6 +8,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('../app/feature/home/home.module').then((m) => m.HomeModule),
+    canDeactivate: [CanNotDeactivateGuard],
   },
   {
     path: 'login',

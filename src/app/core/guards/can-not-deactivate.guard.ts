@@ -22,6 +22,10 @@ export class CanNotDeactivateGuard implements CanDeactivate<any> {
     | UrlTree
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
-    return false;
+    if (this.authService.isLoggedIn()) {
+      return false;
+    }
+
+    return true;
   }
 }
