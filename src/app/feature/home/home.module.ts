@@ -6,6 +6,7 @@ import { FilterPipe } from './filter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../../core/guards/auth.guard';
+import { CanNotDeactivateGuard } from 'src/app/core/guards/can-not-deactivate.guard';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
     component: HomeComponent,
     pathMatch: 'full',
     canActivate: [AuthGuard],
+    canDeactivate: [CanNotDeactivateGuard],
   },
 ];
 
